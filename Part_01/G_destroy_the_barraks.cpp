@@ -67,28 +67,39 @@ int CalcBattle(int x, int y, int p) {
     int damage = 0;
     while(true) {
         if (enemies == 0) y -= army;
-        else if (army - y >= 0) {
-            int remain = army - y;
-            y = 0;
-            enemies -= (remain);
-        }
-        else {
-            int remain = army - enemies;
-            if (remain < 0) enemies -= army;
-            else {
+        else if (y >= army) {
+            if (enemies < army) {
+                int rem = army - enemies;
                 enemies = 0;
-                y -= remain;
+                y -= rem;
+            } else return -1;
+        } else {
+            // if ((y - (army - enemies) + army == enemies + y) {
+            if ((y + enemies) <= army * 1.618) {
+                int rem = army - y;
+                y = 0;
+                enemies -= rem;
+            } else {
+                if (enemies > army) {
+                    int rem = army - y;
+                    y = 0;
+                    enemies -= rem;
+                } else {
+                    int rem = army - enemies;
+                    enemies = 0;
+                    y -= rem;
+                }
             }
         }
         army -= enemies;
         if (army < 0) return -1;
         if (enemies <= 0 && y <= 0) return step;
         if (y > 0) enemies += p;
-        // cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
+        cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
         step++;
     }
 }
-
+// 2500 5000 2499 - 961
 int main()
 {
     int x, y, p;        // x - солдат у нас, y - хп казармы, p - солдат противника за ход
