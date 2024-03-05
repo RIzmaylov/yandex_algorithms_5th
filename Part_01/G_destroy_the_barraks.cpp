@@ -58,6 +58,8 @@
 */
 
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 int CalcBattle(int x, int y, int p) {
@@ -74,37 +76,57 @@ int CalcBattle(int x, int y, int p) {
                 y -= rem;
             } else return -1;
         } else {
-            // if ((y - (army - enemies) + army == enemies + y) {
-            if ((y + enemies) <= army * 1.618) {
+            if ((y + enemies) / (double)army <= 1.6181 && (y + enemies) / (double)army >= 1) {
+            // if ((y + enemies) / army - (y + enemies + army) / (y + enemies) > 0.001) {
                 int rem = army - y;
                 y = 0;
                 enemies -= rem;
-            } else {
-                if (enemies > army) {
-                    int rem = army - y;
-                    y = 0;
-                    enemies -= rem;
-                } else {
+            } else if (enemies < army) {
                     int rem = army - enemies;
                     enemies = 0;
                     y -= rem;
-                }
+            
             }
         }
         army -= enemies;
         if (army < 0) return -1;
         if (enemies <= 0 && y <= 0) return step;
         if (y > 0) enemies += p;
-        cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
+        //cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
         step++;
     }
 }
-// 2500 5000 2499 - 961
+
+void run_test(int num, int x, int y, int p, int res) {
+    cout << "Тест " << num << " " << "res = " << CalcBattle(x, y, p) << " True: " << res << " " << endl;
+}
+
 int main()
 {
     int x, y, p;        // x - солдат у нас, y - хп казармы, p - солдат противника за ход
-    cin >> x >> y >> p;
-    cout << CalcBattle(x, y, p) << '\n';
-    
+    // cin >> x >> y >> p;
+    // cout << CalcBattle(x, y, p) << '\n';
+    run_test (1, 1, 1, 1, 1);
+    run_test (2, 1, 2, 1, -1);
+    run_test (3, 10, 11, 15, 4);
+    run_test (4, 300, 301, 485, -1);
+    run_test (5, 300, 301, 484, 6);
+    run_test (6, 250, 500, 230, 8); //
+    run_test (7, 5, 8, 5, 4);
+    run_test (8, 25, 200, 10, 13);
+    run_test (9, 250, 500, 187, 4);
+    run_test (10, 250, 500, 218, 6);
+    run_test (11, 2, 3, 2, 3);
+    run_test (12, 250, 500, 249, 101);
+    run_test (13, 8, 12, 7, 3);
+    run_test (14, 2500, 5000, 2499, 961);
+    run_test (15, 78, 4934, 77, 4812);
+    run_test (16, 78, 126, 77, 5);
+    run_test (17, 1661, 4327, 1107, 6);
+    run_test (18, 1092, 2892, 950, 11);
+    run_test (19, 31, 495, 15, 30);
+    run_test (20, 250, 500, 209, 6);
+    run_test (21, 3000, 5000, 2998, 79);
+    run_test (22, 2500, 5000, 2420, 16);
     return 0;
 }
