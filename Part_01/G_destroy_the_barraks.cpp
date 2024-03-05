@@ -74,25 +74,35 @@ int CalcBattle(int x, int y, int p) {
                 int rem = army - enemies;
                 enemies = 0;
                 y -= rem;
-            } else return -1;
+            }
+        } else if ((double)army / (enemies - (army - y)) >= 1.7) {
+            enemies -= army - y;
+            y = 0;
         } else {
-            if ((y + enemies) / (double)army <= 1.6181 && (y + enemies) / (double)army >= 1) {
-            // if ((y + enemies) / army - (y + enemies + army) / (y + enemies) > 0.001) {
+            // if ((y + enemies) / (double)army >= 1.616) {
+            if (y != 0 && ((double)army / y) <= 1.618) {
+                int rem = army - enemies;
+                if (rem < 0) {
+                    if (y > army) y -= army;
+                    else {
+                        enemies -= army - y;
+                        y = 0;
+                    }
+                } else {
+                    enemies = 0;
+                    y -= rem;
+                }
+            } else {
                 int rem = army - y;
                 y = 0;
                 enemies -= rem;
-            } else if (enemies < army) {
-                    int rem = army - enemies;
-                    enemies = 0;
-                    y -= rem;
-            
             }
         }
         army -= enemies;
         if (army < 0) return -1;
         if (enemies <= 0 && y <= 0) return step;
         if (y > 0) enemies += p;
-        //cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
+        // cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
         step++;
     }
 }
@@ -111,7 +121,7 @@ int main()
     run_test (3, 10, 11, 15, 4);
     run_test (4, 300, 301, 485, -1);
     run_test (5, 300, 301, 484, 6);
-    run_test (6, 250, 500, 230, 8); //
+    run_test (6, 250, 500, 230, 8); 
     run_test (7, 5, 8, 5, 4);
     run_test (8, 25, 200, 10, 13);
     run_test (9, 250, 500, 187, 4);
