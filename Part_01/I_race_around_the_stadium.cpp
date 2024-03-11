@@ -41,6 +41,8 @@ int main() {
             else resTime = (x1 - pos) / abs(v1);
         }
     }
+    cout << fixed;
+    cout.precision(10);
     cout << "YES\n" << resTime << endl;
     
     return 0;
