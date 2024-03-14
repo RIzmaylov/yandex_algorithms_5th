@@ -32,9 +32,8 @@
 using namespace std;
 
 int main() {
-    int N, K, minPrice;
+    int N, K, profit = 0;
     cin >> N >> K;
-    vector<int> indexOfMinPrices{0};
     vector<int> allPrices;
 
     while(N--) {
@@ -42,28 +41,13 @@ int main() {
         cin >> price;
         allPrices.push_back(price);
     }
-    minPrice = allPrices[0];
 
-    for(int i = 1; i < allPrices.size() - 1; i++) {
-        if (allPrices[i] < minPrice) {
-            minPrice = allPrices[i];
-            indexOfMinPrices.clear();
-            indexOfMinPrices.push_back(i);
-        } else if (allPrices[i] == minPrice) {
-            indexOfMinPrices.push_back(i);
+    for (int i = 0; i < allPrices.size(); ++i) {
+        for (int j = i; j <= i + K && j < allPrices.size(); ++j) {
+            profit == 0 ? profit = allPrices[j] - allPrices[i] : profit = max(allPrices[j] - allPrices[i], profit);
         }
     }
-    int profit = 0;
-    for (int i = 0; i < indexOfMinPrices.size(); i++) {
-        int maxPrice = allPrices[indexOfMinPrices[i] + 1];
-        profit = max(profit, maxPrice - allPrices[indexOfMinPrices[i]]);
-        for (int j = indexOfMinPrices[i] + 1; j <= K + indexOfMinPrices[i] && j < allPrices.size(); ++j) {
-            if (allPrices[j] > maxPrice) {
-                maxPrice = allPrices[j];
-                profit = max(profit, maxPrice - allPrices[indexOfMinPrices[i]]);
-            }
-        }
-    }
+
     cout << profit << '\n';
     return 0;
 }
