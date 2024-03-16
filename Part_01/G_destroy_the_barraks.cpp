@@ -58,57 +58,37 @@
 */
 
 #include <iostream>
-#include <cmath>
+#include <vector>
+#include <algorithm>
 
-using namespace std;
+
+int n, p, k;
+const int INF = 10000;
+std::vector<std::vector<int>> dp(n + 1, std::vector<int>(p + 1, INF));
+
+int solve(int x, int y) {
+    if (y == 0)
+        return 0;
+    if (dp[x][y] != INF)
+        return dp[x][y];
+    int res = INF;
+    for (int i = 0; i <= x; ++i) {
+        res = std::min(res, 1 + solve(x - i, y - p) + solve(i, k));
+    }
+    return dp[x][y] = res;
+}
 
 int CalcBattle(int x, int y, int p) {
-    int enemies = 0;
-    int step = 1;
-    int army = x;
-    int damage = 0;
-    while(true) {
-        if (enemies == 0) y -= army;
-        else if (y >= army) {
-            if (enemies < army) {
-                int rem = army - enemies;
-                enemies = 0;
-                y -= rem;
-            }
-        } else if ((double)army / (enemies - (army - y)) >= 1.7) {
-            enemies -= army - y;
-            y = 0;
-        } else {
-            // if ((y + enemies) / (double)army >= 1.616) {
-            if (y != 0 && ((double)army / y) <= 1.618) {
-                int rem = army - enemies;
-                if (rem < 0) {
-                    if (y > army) y -= army;
-                    else {
-                        enemies -= army - y;
-                        y = 0;
-                    }
-                } else {
-                    enemies = 0;
-                    y -= rem;
-                }
-            } else {
-                int rem = army - y;
-                y = 0;
-                enemies -= rem;
-            }
-        }
-        army -= enemies;
-        if (army < 0) return -1;
-        if (enemies <= 0 && y <= 0) return step;
-        if (y > 0) enemies += p;
-        // cout << "army = " << army << " enemies = " << enemies << " y = " << y << " step = " << step << endl;
-        step++;
-    }
+    n = x;
+    p = y;
+    k = p;
+    int res = solve(n, p);
+    if (res == INF) return -1;
+    else return res;
 }
 
 void run_test(int num, int x, int y, int p, int res) {
-    cout << "Тест " << num << " " << "res = " << CalcBattle(x, y, p) << " True: " << res << " " << endl;
+    std::cout << "Тест " << num << " " << "res = " << CalcBattle(x, y, p) << " True: " << res << " " << std::endl;
 }
 
 int main()
