@@ -107,9 +107,13 @@ int main() {
             cin >> num;
             nums.push_back(num);
         }
-
-        for(int j = 0;;) {
-            
+        int minNum = nums[0];
+        int start = 0;
+        for(int j = 1; j < cntNums;) {
+            if (j + 1 - start > minNum) {
+                res.push_back(j - start);
+                start = j;
+            }
         }
         result.push_back(res);
     }
