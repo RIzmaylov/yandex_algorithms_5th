@@ -40,51 +40,85 @@
 
 В первом наборе тестовых данных набор длин {1, 3, 1}, соответствующий разбиению {[1], [3, 3, 3], [2]}, 
 также был бы корректным.
+
+тест 2
+
+10
+9
+1 1 9 2 9 9 9 5 8
+10
+10 9 9 10 3 4 1 8 2 7               (1) (2 3) (4 7 8 9) (9 10 10)
+10
+10 10 10 1 5 8 4 8 9 8
+10
+1 3 10 4 6 4 3 7 6 10
+10
+4 3 8 3 7 1 10 5 1 4
+10
+5 2 5 5 10 10 10 1 6 3
+10
+9 2 1 4 1 9 8 3 1 1
+7
+4 1 6 4 7 1 7
+2
+2 2
+2
+1 2
+
+4
+1 1 2 5
+5
+4 2 1 2 1
+4
+3 1 4 2
+4
+1 3 3 3
+6
+3 2 1 2 1 1
+4
+2 5 1 2
+6
+2 1 2 3 1 1
+4
+2 3 1 1
+1
+2
+2
+1 1
 */
 
 #include <iostream>
-#include <set>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
     int t;
+    vector<vector<int>> result;
     cin >> t;
     for (int i = 0; i < t; ++i) {
-        int n, cnt;
-        cin >> n;
-        multiset<int> nums;
+        int cntNums;
+        cin >> cntNums;
+        vector<int> nums;
         vector<int> res;
-        for (int j = 0; j < n; ++j) {
+        for (int j = 0; j < cntNums; ++j) {
             int num;
             cin >> num;
-            nums.insert(num);
+            nums.push_back(num);
         }
-        res.push_back(*nums.begin());
-        int step = res[0];
-        int cntSteps = nums.size();
-        for (const auto& num : nums) {
-            step--;
-            cntSteps--;
-            if (step == 0 || cntSteps == 0) {
-                step = num;
-                res.push_back(step);
-                continue;
-            }
+
+        for(int j = 0;;) {
+            
         }
-        int sum = 0;
-        for (const auto& c : res)
-        {
-            sum += c;
+        result.push_back(res);
+    }
+    for (const auto& vec : result) {
+        cout << vec.size() << '\n';
+        for (const auto& num : vec) {
+            cout << num << ' ';
         }
-        if (sum > cnt) res[res.size() - 1] -= sum - cnt;
-        cout << res.size() << endl;
-        for (const auto& c : res)
-        {
-            cout << c << ' ';
-        }
-        cout << endl;
+        cout << '\n';
     }
     return 0;
 }
