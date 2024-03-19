@@ -47,7 +47,7 @@
 9
 1 1 9 2 9 9 9 5 8
 10
-10 9 9 10 3 4 1 8 2 7               (1) (2 3) (4 7 8 9) (9 10 10)
+10 9 9 10 3 4 1 8 2 7 
 10
 10 10 10 1 5 8 4 8 9 8
 10
@@ -57,9 +57,9 @@
 10
 5 2 5 5 10 10 10 1 6 3
 10
-9 2 1 4 1 9 8 3 1 1
+9 2 1 4 1 9 8 3 1 1     !
 7
-4 1 6 4 7 1 7
+4 1 6 4 7 1 7           !
 2
 2 2
 2
@@ -78,9 +78,9 @@
 4
 2 5 1 2
 6
-2 1 2 3 1 1
+2 1 2 3 1 1         !
 4
-2 3 1 1
+2 3 1 1             !
 1
 2
 2
@@ -107,12 +107,17 @@ int main() {
             cin >> num;
             nums.push_back(num);
         }
-        int minNum = nums[0];
-        int start = 0;
-        for(int j = 1; j < cntNums;) {
-            if (j + 1 - start > minNum) {
-                res.push_back(j - start);
-                start = j;
+        int minNum = nums[0], step = 0;
+        res.push_back(1);
+        for (int j = 1; j < cntNums; ++j) {
+            minNum = min(minNum, nums[j]);
+            if (res[step] + 1 > minNum) {
+                res.push_back(1);
+                step++;
+                minNum = nums[j];
+                continue;
+            } else {
+                res[step]++;
             }
         }
         result.push_back(res);
