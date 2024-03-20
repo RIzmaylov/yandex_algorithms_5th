@@ -35,6 +35,18 @@ N кораблей (каждый корабль занимает одну кле
 1 3
 1 4
 1 5
+
+10
+9 4
+8 9
+5 4
+10 8
+7 9
+10 5
+9 2
+8 10
+3 9
+6 2
 */
 
 #include <iostream>
@@ -45,30 +57,81 @@ using namespace std;
 int main() {
     int N;
     cin >> N;
-    vector<vector<int>> arr (N);
+    vector<vector<int>> arrStart (N);
     for (int i = 0; i < N; ++i) 
-        arr[i] = vector<int>(N, 0);
+        arrStart[i] = vector<int>(N, 0);
 
     for (int i = 0; i < N; ++i) {
         int x, y;
         cin >> x >> y;
-        arr[x - 1][y - 1] = 1;
+        arrStart[x - 1][y - 1] = 1;
     }
     int resSteps = 0;  
     int cntInRow = 0;
     for (int k = 0; k < N; ++k) {       // перебираем столбцы в нахождении минимума шагов
         int nextSteps = 0;
-        for (int i = 0; i < N; ++i) { 
-            for (int j = k; j >= 0; --j) {
-                cntInRow += arr[i][j];
-                if (arr[i][j] == 1) nextSteps += cntInRow - 1 + abs(j - k);
+        vector<vector<int>> arr = arrStart;
+        for (int i = 0; i < N; ++i) {
+            if (k > 0) {
+                for (int j = k - 1; j >= 0; --j) {
+                    if (arr[i][k] == 0 && arr[i][j] == 1) {
+                        nextSteps += abs(j - k);
+                        arr[i][k] = 1;
+                        arr[i][j] = 0;
+                    } else if (arr[i][j] == 1) {
+                        int idxUp = i;
+                        int idxDown = i;
+                        while (idxUp >= 0 && arr[idxUp][k] == 1) idxUp--;
+                        while (idxDown < N && arr[idxDown][k] == 1) idxDown++;
+                        if (idxDown < N && idxUp == -1) {
+                            nextSteps += idxDown - i + abs(j - k);
+                            arr[idxDown][k] = 1;
+                        } else if (idxUp >= 0 && idxDown == N) {
+                            nextSteps += i - idxUp + abs(j - k);
+                            arr[idxUp][k] = 1;
+                        } else if (idxDown < N && idxUp >= 0) {
+                            if (idxDown - i < i - idxUp) {
+                                nextSteps += idxDown - i + abs(j - k);
+                                arr[idxDown][k] = 1;
+                            } else {
+                                nextSteps += i - idxUp + abs(j - k);
+                                arr[idxUp][k] = 1;
+                            }
+                        }
+                        arr[i][j] = 0;
+                    }
+                }
             }
-            if (cntInRow > 0) cntInRow = 0;
-            for (int j = k; j < N; ++j) {
-                cntInRow += arr[i][j];
-                if (arr[i][j] == 1) nextSteps += cntInRow - 1 + abs(j - k);
+            if (k < N - 1) {
+                for (int j = k + 1; j < N; ++j) {
+                    if (arr[i][k] == 0 && arr[i][j] == 1) {
+                        nextSteps += abs(j - k);
+                        arr[i][k] = 1;
+                        arr[i][j] = 0;
+                    } else if (arr[i][j] == 1) {
+                        int idxUp = i;
+                        int idxDown = i;
+                        while (idxUp >= 0 && arr[idxUp][k] == 1) idxUp--;
+                        while (idxDown < N && arr[idxDown][k] == 1) idxDown++;
+                        if (idxDown < N && idxUp == -1) {
+                            nextSteps += idxDown - i + abs(j - k);
+                            arr[idxDown][k] = 1;
+                        } else if (idxUp >= 0 && idxDown == N) {
+                            nextSteps += i - idxUp + abs(j - k);
+                            arr[idxUp][k] = 1;
+                        } else if (idxDown < N && idxUp >= 0) {
+                            if (idxDown - i < i - idxUp) {
+                                nextSteps += idxDown - i + abs(j - k);
+                                arr[idxDown][k] = 1;
+                            } else {
+                                nextSteps += i - idxUp + abs(j - k);
+                                arr[idxUp][k] = 1;
+                            }
+                        }
+                        arr[i][j] = 0;
+                    }
+                }
             }
-            if (cntInRow > 0) cntInRow--;
         }
         if (k == 0) resSteps = nextSteps;
         else resSteps = min(resSteps, nextSteps);
