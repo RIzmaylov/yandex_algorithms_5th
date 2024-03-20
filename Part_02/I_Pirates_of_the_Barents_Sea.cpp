@@ -21,31 +21,59 @@ N кораблей (каждый корабль занимает одну кле
 Примечания
 В примере необходимо выстроить корабли в столбце номер 2. Для этого необходимо переставить корабль из клетки 3 3 в клетку 3 2 за один ход, 
 а корабль из клетки 1 1 в клетку 2 2 за два хода. Существуют и другие варианты перестановки кораблей, однако ни в одном из них нет меньше трёх ходов.
+
+5
+3 1
+3 2
+3 3
+3 4
+3 5
+
+5
+1 1
+1 2
+1 3
+1 4
+1 5
 */
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main() {
     int N;
     cin >> N;
-    int** arr = new int*[N];
-    for(int i = 0; i < N; i++)
-        arr[i] = new int[N];
+    vector<vector<int>> arr (N);
+    for (int i = 0; i < N; ++i) 
+        arr[i] = vector<int>(N, 0);
 
     for (int i = 0; i < N; ++i) {
         int x, y;
         cin >> x >> y;
         arr[x - 1][y - 1] = 1;
     }
-
-    for (int i = 0; i < N; ++i) {
-        
+    int resSteps = 0;  
+    int cntInRow = 0;
+    for (int k = 0; k < N; ++k) {       // перебираем столбцы в нахождении минимума шагов
+        int nextSteps = 0;
+        for (int i = 0; i < N; ++i) { 
+            for (int j = k; j >= 0; --j) {
+                cntInRow += arr[i][j];
+                if (arr[i][j] == 1) nextSteps += cntInRow - 1 + abs(j - k);
+            }
+            if (cntInRow > 0) cntInRow = 0;
+            for (int j = k; j < N; ++j) {
+                cntInRow += arr[i][j];
+                if (arr[i][j] == 1) nextSteps += cntInRow - 1 + abs(j - k);
+            }
+            if (cntInRow > 0) cntInRow--;
+        }
+        if (k == 0) resSteps = nextSteps;
+        else resSteps = min(resSteps, nextSteps);
     }
-
-    for(int i = 0; i < N; i++)
-        delete[] arr[i];
-    delete[] arr;
+    cout << resSteps << '\n';
+    
     return 0;
 }
