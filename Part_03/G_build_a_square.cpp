@@ -43,6 +43,23 @@
 1 -1
 Вывод
 0
+
+тест 6
+12
+8 6
+-9 6
+-4 1
+-5 3
+6 4
+7 -2
+9 2
+9 8
+8 10
+-7 -2
+-5 -6
+1 7
+вывод
+
 */
 
 #include <iostream>
@@ -102,5 +119,109 @@ int main() {
         cin >> x >> y;
         points[x].insert(y);
     }
+    int res1_x = 0, res1_y = 0, res2_x = 0, res2_y = 0, min_points = 2;
+    for (const auto& [x, set_y] : points) {
+        if (set_y.size() <= 1) continue;
+        for (auto it = set_y.begin(); it != prev(set_y.end()); ++it) {
+            for (auto it2 = next(it); it2 != set_y.end(); ++it2) {
+                int dy = *it2 - *it;
+                int need_to_up = 2, need_to_down = 2, need_to_rotate = 2;
+                int up_x1, up_y1, up_x2, up_y2;
+                if (points.find(x - dy) != points.end() && points[x - dy].find(*it) != points[x - dy].end()) need_to_up--;
+                else {
+                    up_x1 = x - dy;
+                    up_y1 = *(it);
+                }
+                if (points.find(x - dy) != points.end() && points[x - dy].find(*it2) != points[x - dy].end()) {
+                    need_to_up--;
+                    if (need_to_up == 0) {
+                        cout << 0 << '\n';
+                        return 0;
+                    }
+                } else {
+                    if (need_to_up == 2) {
+                        up_x2 = x - dy;
+                        up_y2 = *it2;
+                    } else {
+                        up_x1 = x - dy;
+                        up_y1 = *it2;
+                    }
+                }
+                int down_x1, down_y1, down_x2, down_y2;
+                if (points.find(x + dy) != points.end() && points[x + dy].find(*it) != points[x + dy].end()) need_to_down--;
+                else {
+                    down_x1 = x + dy;
+                    down_y1 = *it;
+                }
+                if (points.find(x + dy) != points.end() && points[x + dy].find(*it2) != points[x + dy].end()) {
+                    need_to_down--;
+                    if (need_to_down == 0) {
+                        cout << 0 << '\n';
+                        return 0;
+                    }
+                } else {
+                    if (need_to_down == 2) {
+                        down_x2 = x + dy;
+                        down_y2 = *it2;
+                    } else {
+                        down_x1 = x + dy;
+                        down_y1 = *it2;
+                    }
+                }
+                int rot_x1, rot_y1, rot_x2, rot_y2;
+                if (dy % 2 == 0) {
+                    auto it3 = next(it, dy / 2);
+                    if (points.find(x - dy / 2) != points.end() && points[x - dy / 2].find(*it3) != points[x - dy / 2].end()) need_to_rotate--;
+                    else {
+                        rot_x1 = x - dy / 2;
+                        rot_y1 = *it3;
+                    }
+                    if (points.find(x + dy / 2) != points.end() && points[x + dy / 2].find(*it3) != points[x + dy / 2].end()) {
+                        need_to_rotate--;
+                        if (need_to_rotate == 0) {
+                            cout << 0 << '\n';
+                            return 0;
+                        }
+                    } else {
+                    if (need_to_rotate == 2) {
+                        rot_x2 = x + dy / 2;
+                        rot_y2 = *it3;
+                    } else {
+                        rot_x1 = x + dy / 2;
+                        rot_y1 = *it3;
+                    }
+                }
+                }
+                if (min_points == 1) continue;
+                if (need_to_down == 1) {
+                    res1_x = down_x1;
+                    res1_y = down_y1;
+                    min_points = 1;
+                    continue;
+                }
+                if (need_to_up == 1) {
+                    res1_x = up_x1;
+                    res1_y = up_y1;
+                    min_points = 1;
+                    continue;
+                }
+                if (need_to_rotate == 1) {
+                    res1_x = rot_x1;
+                    res1_y = rot_y1;
+                    min_points = 1;
+                    continue;
+                }
+                res1_x = up_x1;
+                res1_y = up_y1;
+                res2_x = up_x2;
+                res2_y = up_y2;
+            }
+        }
+    }
+
+    cout << min_points << '\n';
+    cout << res1_x << ' ' << res1_y << '\n';
+    if (min_points == 2)
+        cout << res2_x << ' ' << res2_y << '\n';
     return 0;
 }
