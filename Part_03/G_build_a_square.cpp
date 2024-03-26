@@ -59,12 +59,244 @@
 -5 -6
 1 7
 вывод
+3 10
 
+тест 9
+21
+-3 3
+5 4
+-9 -1
+0 4
+7 -2
+1 8
+3 4
+8 -1
+-1 -2
+10 6
+-2 -8
+-6 -6
+5 -10
+1 5
+-4 -4
+-9 6
+-9 -7
+0 7
+3 -7
+-4 1
+1 0
+вывод
+1
+-2 -11
+
+тест 11
+200
+-61366792 -62843276
+-40815926 19011845
+28942849 -88271603
+52193328 -77715111
+38336116 -14051365
+-34724931 -61880077
+-42603797 57331589
+30617711 32266737
+49957576 -2084616
+15028452 21774181
+67106711 25602029
+22851300 77076140
+-9712322 27821985
+93413060 -89420126
+-47372988 -45539400
+-14094986 95883532
+-69587413 -98190041
+61069270 39264572
+24238802 -88281466
+46191836 82821785
+-27467679 -61972516
+25174816 69293667
+29160895 -33314687
+78527331 93239770
+-58337357 -26374092
+-89210812 -11992319
+35150291 3474196
+70998005 92294100
+-41811183 -36747449
+33730603 22309777
+-58965870 -89948582
+13858738 20627150
+56129284 -51973790
+42566226 -77996143
+-34919397 73551587
+95584845 -65625338
+38872577 -23855570
+-84997210 52243656
+58447214 55209994
+52428369 66319282
+-63735345 -42983454
+-8186109 10514909
+-95370368 -35940467
+-95037025 -96854554
+-9501779 90754899
+65590332 45214566
+-38735215 92988729
+43177751 -27287851
+46358707 11464201
+32282603 73200861
+-1955435 -41490088
+99847228 -9581268
+-37793496 68165298
+31713277 -92638825
+17538834 3290378
+88652527 56249513
+26731936 94787017
+53632901 -37952970
+-38601088 -64550010
+49427686 57046561
+43961118 80181801
+19476502 -19513053
+-64504460 79975792
+4300840 -66400858
+43462773 -12620679
+1295303 46228562
+-40890209 -44966308
+8020140 36193128
+-4749967 64882218
+-47646802 76336430
+87882158 40106061
+-31944233 -94063637
+79800242 15333722
+-96484434 81227805
+70888713 -77889461
+41606610 83519728
+71251328 14118205
+-70162110 40316552
+-39430027 -91686132
+-72969397 -77302201
+-51204412 -53922062
+56474704 -78580701
+-95250630 27003902
+95071751 -40659488
+4619315 52746748
+18518147 -1999065
+5194884 -71456678
+-87375508 87554152
+-62000677 70363292
+67208158 -64793737
+-47551978 -58480148
+87234114 45059054
+90756635 63881429
+68740165 -24807251
+6607082 -39759119
+32260704 -63716750
+95309764 48017065
+-9599798 68823014
+-11835304 -63555761
+938951 -48120611
+61764689 -19645816
+-40455548 289657
+71711298 31368161
+63178392 -53259505
+-27263632 -79816071
+-31544292 -28925690
+19247576 -17674569
+-4338359 63312964
+-45116292 38480079
+-1285550 65515960
+8920065 -90964855
+80275474 16659130
+-35508970 -96231641
+34905531 -50811639
+45313552 61867232
+-56338587 -73787424
+-89852694 15288322
+45202017 44257045
+-381659 -61889190
+-15296467 -43885349
+64538762 59544188
+-27812905 -89509314
+-83517859 75433401
+2661861 11285392
+-90654430 -58817591
+68939538 33932057
+-84212908 -78276513
+-4962705 -97425166
+-52919990 -56082275
+85744109 13775855
+58330372 49457154
+61992926 74179380
+53535645 -15656404
+-45029381 29494752
+36522033 80359776
+-75332522 73477982
+-55676374 -90630641
+73594606 46059385
+-68062570 3132594
+-60039147 80297492
+-86536702 -72657082
+-84195786 88617651
+-53704662 6118228
+-74436680 46677292
+60379111 90930025
+-98094367 15139240
+37876016 97245902
+1321272 98984180
+-34421735 48423449
+15621225 35989509
+39868518 67795727
+-81831000 86179758
+-1970869 -4482582
+4104866 29914432
+-21001604 -31836278
+14178339 13826420
+-65375089 -7430999
+37414222 82100501
+29124764 -46724082
+-75220882 66386601
+-38866162 -5703229
+31408259 -70715616
+41852726 95659170
+55979858 -87771079
+93197700 -21933617
+57098413 -79176537
+-51693171 -45212428
+20199288 -90335664
+14460518 27472286
+84137181 30636526
+-40499933 66487392
+-67540122 66536072
+-58698154 61993152
+21216134 43716211
+259764 -8358128
+19741505 -96732160
+-50865768 10310900
+71779929 -52408273
+88964711 98573516
+-24400993 99721608
+-59726026 75234168
+-3293525 70751913
+62824889 -27406980
+-81269515 -82380512
+49871747 -16755689
+-58950232 76976732
+-49214020 -17555253
+-77527021 -54518538
+-38852905 -77738881
+65357455 -99828254
+-55491700 -3201677
+12574304 -59984455
+-10436745 7765145
+64768104 -63470165
+57601949 -82423504
+95538347 -90264454
+-43068751 73779315
+-71100445 81784621
+24381670 -2266860
+25697778 75425596
+вывод
 */
 
 #include <iostream>
 #include <set>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -77,6 +309,7 @@ void print_one_point_vars(int p_x, int p_y) {
 
 int main() {
     map<int, set<int>> points;
+    // vector<pair<int, int>> test;
     int cnt_points = 0;
     cin >> cnt_points;
     if (cnt_points == 1) {
@@ -114,114 +347,183 @@ int main() {
         }
         return 0;
     }
-    while (cnt_points--) {
+    set<pair<int, int>> set_points;
+    int sum_x = 0;
+    for (int i = 0; i < cnt_points; ++i) {
         int x, y;
         cin >> x >> y;
-        points[x].insert(y);
+        sum_x += x;
+        set_points.insert({x, y});
     }
-    int res1_x = 0, res1_y = 0, res2_x = 0, res2_y = 0, min_points = 2;
-    for (const auto& [x, set_y] : points) {
-        if (set_y.size() <= 1) continue;
-        for (auto it = set_y.begin(); it != prev(set_y.end()); ++it) {
-            for (auto it2 = next(it); it2 != set_y.end(); ++it2) {
-                int dy = *it2 - *it;
-                int need_to_up = 2, need_to_down = 2, need_to_rotate = 2;
-                int up_x1, up_y1, up_x2, up_y2;
-                if (points.find(x - dy) != points.end() && points[x - dy].find(*it) != points[x - dy].end()) need_to_up--;
-                else {
-                    up_x1 = x - dy;
-                    up_y1 = *(it);
+    int aver_x = sum_x / cnt_points;
+    int res1_x, res1_y, res2_x, res2_y;
+    int min_points = 2;
+    for (auto it = set_points.begin(); it != prev(set_points.end()); ++it) {
+        auto it2 = next(it);
+        for (;it2 != set_points.end(); ++it2) {
+            int up_points = 2, down_points = 2;
+            int up1_x, up1_y, up2_x, up2_y;
+            int down1_x, down1_y, down2_x, down2_y;
+            int dx = (*(it2)).first - (*(it)).first;
+            int dy = (*(it2)).second - (*(it)).second;
+            if (dy < 0) {
+                // считаю в одну сторону от линии
+                if (set_points.find({(*(it2)).first - dy, (*(it2)).second + dx}) != set_points.end()) {
+                    up_points--;
+                } else {
+                    up1_x = (*(it2)).first - dy;
+                    up1_y = (*(it2)).second + dx;
                 }
-                if (points.find(x - dy) != points.end() && points[x - dy].find(*it2) != points[x - dy].end()) {
-                    need_to_up--;
-                    if (need_to_up == 0) {
+                if (set_points.find({(*(it)).first - dy, (*(it)).second + dx}) != set_points.end()) {
+                    up_points--;
+                    if (up_points == 0) {
                         cout << 0 << '\n';
                         return 0;
                     }
                 } else {
-                    if (need_to_up == 2) {
-                        up_x2 = x - dy;
-                        up_y2 = *it2;
+                    if (up_points == 1) {
+                        up1_x = (*(it)).first - dy;
+                        up1_y = (*(it)).second + dx;
                     } else {
-                        up_x1 = x - dy;
-                        up_y1 = *it2;
+                        up2_x = (*(it)).first - dy;
+                        up2_y = (*(it)).second + dx;
                     }
                 }
-                int down_x1, down_y1, down_x2, down_y2;
-                if (points.find(x + dy) != points.end() && points[x + dy].find(*it) != points[x + dy].end()) need_to_down--;
-                else {
-                    down_x1 = x + dy;
-                    down_y1 = *it;
+                // считаю в другую сторону от линии
+                if (set_points.find({(*(it2)).first + dy, (*(it2)).second - dx}) != set_points.end()) {
+                    down_points--;
+                } else {
+                    down1_x = (*(it2)).first + dy;
+                    down1_y = (*(it2)).second - dx;
                 }
-                if (points.find(x + dy) != points.end() && points[x + dy].find(*it2) != points[x + dy].end()) {
-                    need_to_down--;
-                    if (need_to_down == 0) {
+                if (set_points.find({(*(it)).first + dy, (*(it)).second - dx}) != set_points.end()) {
+                    down_points--;
+                    if (down_points == 0) {
                         cout << 0 << '\n';
                         return 0;
                     }
                 } else {
-                    if (need_to_down == 2) {
-                        down_x2 = x + dy;
-                        down_y2 = *it2;
+                    if (down_points == 1) {
+                        down1_x = (*(it)).first + dy;
+                        down1_y = (*(it)).second - dx;
                     } else {
-                        down_x1 = x + dy;
-                        down_y1 = *it2;
+                        down2_x = (*(it)).first + dy;
+                        down2_y = (*(it)).second - dx;
                     }
                 }
-                int rot_x1, rot_y1, rot_x2, rot_y2;
-                if (dy % 2 == 0) {
-                    auto it3 = next(it, dy / 2);
-                    if (points.find(x - dy / 2) != points.end() && points[x - dy / 2].find(*it3) != points[x - dy / 2].end()) need_to_rotate--;
-                    else {
-                        rot_x1 = x - dy / 2;
-                        rot_y1 = *it3;
+            } else {
+                // считаю в одну сторону от линии
+                if (set_points.find({(*(it2)).first + dy, (*(it2)).second - dx}) != set_points.end()) {
+                    up_points--;
+                } else {
+                    up1_x = (*(it2)).first + dy;
+                    up1_y = (*(it2)).second - dx;
+                }
+                if (set_points.find({(*(it)).first + dy, (*(it)).second - dx}) != set_points.end()) {
+                    up_points--;
+                    if (up_points == 0) {
+                        cout << 0 << '\n';
+                        return 0;
                     }
-                    if (points.find(x + dy / 2) != points.end() && points[x + dy / 2].find(*it3) != points[x + dy / 2].end()) {
-                        need_to_rotate--;
-                        if (need_to_rotate == 0) {
-                            cout << 0 << '\n';
-                            return 0;
-                        }
+                } else {
+                    if (up_points == 1) {
+                        up1_x = (*(it)).first + dy;
+                        up1_y = (*(it)).second - dx;
                     } else {
-                    if (need_to_rotate == 2) {
-                        rot_x2 = x + dy / 2;
-                        rot_y2 = *it3;
-                    } else {
-                        rot_x1 = x + dy / 2;
-                        rot_y1 = *it3;
+                        up2_x = (*(it)).first + dy;
+                        up2_y = (*(it)).second - dx;
                     }
                 }
+                // считаю в другую сторону от линии
+                if (set_points.find({(*(it2)).first - dy, (*(it2)).second + dx}) != set_points.end()) {
+                    down_points--;
+                } else {
+                    down1_x = (*(it2)).first - dy;
+                    down1_y = (*(it2)).second + dx;
                 }
-                if (min_points == 1) continue;
-                if (need_to_down == 1) {
-                    res1_x = down_x1;
-                    res1_y = down_y1;
-                    min_points = 1;
-                    continue;
+                if (set_points.find({(*(it)).first - dy, (*(it)).second + dx}) != set_points.end()) {
+                    down_points--;
+                    if (down_points == 0) {
+                        cout << 0 << '\n';
+                        return 0;
+                    }
+                } else {
+                    if (down_points == 1) {
+                        down1_x = (*(it)).first - dy;
+                        down1_y = (*(it)).second + dx;
+                    } else {
+                        down2_x = (*(it)).first - dy;
+                        down2_y = (*(it)).second + dx;
+                    }
                 }
-                if (need_to_up == 1) {
-                    res1_x = up_x1;
-                    res1_y = up_y1;
-                    min_points = 1;
-                    continue;
-                }
-                if (need_to_rotate == 1) {
-                    res1_x = rot_x1;
-                    res1_y = rot_y1;
-                    min_points = 1;
-                    continue;
-                }
-                res1_x = up_x1;
-                res1_y = up_y1;
-                res2_x = up_x2;
-                res2_y = up_y2;
             }
+            // if (down_points == 1 && up_points == 1 && min_points != 1) {
+            //     if (abs(down1_x - aver_x) < abs(up1_x - aver_x)) {
+            //         res1_x = down1_x;
+            //         res1_y = down1_y;
+            //     } else {
+            //         res1_x = up1_x;
+            //         res1_y = up1_y;
+            //     }
+            //     cout << ' sfdsdfsdfsdfsdfsdfsd' << endl;
+            //     min_points = 1;
+            //     continue;
+            // }
+            if (up_points == 1) {
+                if (min_points == 1) {
+                    if (abs(res1_x - 0) < abs(up1_x - 0)) {
+                        res1_x = up1_x;
+                        res1_y = up1_y;
+                    }
+                } else {
+                    min_points = 1;
+                    res1_x = up1_x;
+                    res1_y = up1_y;
+                }
+                // test.clear();
+                // test.push_back(*it);
+                // test.push_back(*it2);
+                continue;
+            }
+            if (down_points == 1) {
+                if (min_points == 1) {
+                    if (abs(res1_x - 0) > abs(down1_x - 0)) {
+                        res1_x = down1_x;
+                        res1_y = down1_y;
+                    }
+                } else {
+                    min_points = 1;
+                    res1_x = down1_x;
+                    res1_y = down1_y;
+                }
+                // test.clear();
+                // test.push_back(*it);
+                // test.push_back(*it2);
+                continue;
+            }
+            if (min_points == 1) continue;
+            if ((*(it)).first > aver_x) {
+                res1_x = down1_x;
+                res1_y = down1_y;
+                res2_x = down2_x;
+                res2_y = down2_y;
+            } else {
+                res1_x = up1_x;
+                res1_y = up1_y;
+                res2_x = up2_x;
+                res2_y = up2_y;
+            }
+            // test.clear();
+            // test.push_back(*it);
+            // test.push_back(*it2);
         }
     }
-
     cout << min_points << '\n';
     cout << res1_x << ' ' << res1_y << '\n';
     if (min_points == 2)
         cout << res2_x << ' ' << res2_y << '\n';
+    // for(auto c : test) {
+    //     cout << '{' << c.first << ' ' << c.second << '}' << endl;
+    // }
     return 0;
 }
